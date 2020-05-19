@@ -10,7 +10,7 @@
 
     <style>
         body {
-            background-color: #cca300;
+            background-color: #ccb63b;
             font-family: "Trebuchet MS", Helvetica, sans-serif;
             color: #4d2800;
         }
@@ -69,7 +69,6 @@
                     <div class="form-group">
                         <input type="text" class="form-control" name="b_salary" value="{{$employees[0]->b_salary}}"placeholder="Enter Employee Basic Salary">
                     </div>
-                    </br>
                     <input type="submit" class="button" value="UPDATE">
                     <input type="reset" class="button" value="RESET">
                 </form>

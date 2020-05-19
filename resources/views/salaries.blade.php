@@ -10,14 +10,20 @@
 
     <style>
         body {
-            background-color: #cca300;
+            background-color: #ccb63b;
             font-family: "Trebuchet MS", Helvetica, sans-serif;
             color: #4d2800;
         }
-        table, th, td{
+        table, td{
             border: 2px solid black;
             background-color: #ffff80;
         }
+
+        th{
+            border: 2px solid black;
+            background-color: #E5DE03;
+        }
+
         .button{
             background-color: #992600;
             color: white;
@@ -35,23 +41,43 @@
         <img src="radin1.png" width="250" height="200" align="left">
         <h1 style="font-size: 50px">HOTEL RADIN PEARL</h1>
         <h3 style="font-size: 30px">EMPLOYEE SALARIES</h3>
-        <form action="http://127.0.0.1:8000/emp">
+        <form action="http://127.0.0.1:8000/addsal">
             <input type="submit" class="button" value="ADD NEW SALARY" />
         </form>
 
         <table class="table table-hover">
             <th>Employee ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Full&nbspName</th>
             <th>Email</th>
             <th>Division</th>
             <th>Designation</th>
-            <th>Basic Salary</th>
+            <th>Basic&nbspSalary</th>
             <th>Increments</th>
             <th>Decrements</th>
-            <th>Action</th>
+            <th>Net&nbspSalary</th>
+            <th>Delete</th>
+
+            @foreach($sals as $sal)
+            <tr>
+                <td>{{$sal->eid}}</td>
+                <td>{{$sal->full_name}}</td>
+                <td>{{$sal->email}}</td>
+                <td>{{$sal->div}}</td>
+                <td>{{$sal->designation}}</td>
+                <td>{{$sal->b_salary}}</td>
+                <td>{{$sal->increments}}</td>
+                <td>{{$sal->decrements}}</td>
+                <td>{{$sal->net_salary}}</td>
+
+                <td>
+                    <a href="/deleteSal/{{$sal->id}}" class="button">DELETE</a>
+                </td>
+            </tr>
+            @endforeach
 
         </table>
+
+        <a href="/salaryreport" class="button">Generate Report</a>
 
     </div>
 </div>

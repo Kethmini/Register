@@ -22,10 +22,6 @@ Route::get('/pro', function (){
     return view('profiles')->with('emps', $data);
 });
 
-Route::get('/sal', function (){
-    return view('salaries');
-});
-
 Route::get('/employee' , 'EmployeeController@display');
 
 Route::post('/saveEmp','EmployeeController@save');
@@ -35,3 +31,28 @@ Route::get('/deleteemp/{id}', 'EmployeeController@delete');
 Route::get('updateemp/{id}', 'EmployeeController@edit');
 
 Route::post('/update/{id}','EmployeeController@update');
+
+Route::get('/addsal',function (){
+    return view('addsalary');
+});
+
+/* Route::get('/payslip', function (){
+    return view('payslip');
+}); */
+
+Route::get('/sal', function (){
+    $data=App\Salary::all();
+    return view('salaries')->with('sals', $data);
+});
+
+Route::post('/saveSal','SalaryController@save');
+
+Route::get('/deleteSal/{id}', 'SalaryController@delete');
+
+Route::get('report', 'PrintController@index');
+
+Route::get('/report/pdf', 'PrintController@pdf');
+
+Route::get('salaryreport', 'ReportController@index');
+
+Route::get('/salaryreport/pdf', 'ReportController@pdf');

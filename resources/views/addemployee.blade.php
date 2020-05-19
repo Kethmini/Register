@@ -10,7 +10,7 @@
 
     <style>
         body {
-            background-color: #cca300;
+            background-color: #ccb63b;
             font-family: "Trebuchet MS", Helvetica, sans-serif;
             color: #4d2800;
         }
@@ -44,7 +44,7 @@
                 <form action="/saveEmp" method="post">
                     {{csrf_field()}}
                     <div class="form-group">
-                        <input type="text" required minlength="5" length="5" class="form-control" name="eid" placeholder="Enter Employee ID">
+                        <input type="text" required minlength="5" class="form-control" name="eid" placeholder="Enter Employee ID">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="f_name" placeholder="Enter Employee First Name">
@@ -53,7 +53,7 @@
                         <input type="text" class="form-control" name="l_name" placeholder="Enter Employee Last Name">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="nic" placeholder="Enter Employee NIC">
+                        <input type="text" required minlength="10" maxlength="12" class="form-control" name="nic" placeholder="Enter Employee NIC">
                     </div>
                     <div class="form-group">
                         <input type="date" class="form-control" name="b_day" placeholder="Enter Employee Birth Day">
@@ -62,10 +62,10 @@
                         <input type="text" class="form-control" name="address" placeholder="Enter Employee Address">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="contact_no" placeholder="Enter Employee Contact No">
+                        <input type="tel" required class="form-control" name="contact_no" placeholder="Enter Employee Contact No">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="email" placeholder="Enter Employee Email">
+                        <input type="email" required class="form-control" name="email" placeholder="Enter Employee Email">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="div" placeholder="Enter Employee Division">
@@ -76,7 +76,6 @@
                     <div class="form-group">
                         <input type="text" class="form-control" name="b_salary" placeholder="Enter Employee Basic Salary">
                     </div>
-                    </br>
                     <input type="submit" class="button" value="SUBMIT">
                     <input type="reset" class="button" value="RESET">
                 </form>

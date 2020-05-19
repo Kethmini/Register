@@ -12,8 +12,9 @@
     <!-- Styles -->
     <style>
         html, body {
-            background-color:#cca300;
+            background-color:#ccb63b;
             color: #4d2800;
+            //background-image: url("radin2.jpg");
             font-family: "Trebuchet MS", Helvetica, sans-serif;
             font-weight: 200;
             height: 100vh;

@@ -16,8 +16,7 @@ class CreateSalariesTable extends Migration
         Schema::create('salaries', function (Blueprint $table) {
             $table->increments('id');
             $table->string('eid');
-            $table->string('f_name');
-            $table->string('l_name');
+            $table->string('full_name');
             $table->string('email');
             $table->string('div');
             $table->string('designation');

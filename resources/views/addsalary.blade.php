@@ -10,7 +10,7 @@
 
     <style>
         body {
-            background-color: #cca300;
+            background-color: #ccb63b;
             font-family: "Trebuchet MS", Helvetica, sans-serif;
             color: #4d2800;
         }
@@ -34,18 +34,16 @@
         </br>
         <div class="row">
             <div class="col-md-12">
-                <form action="add_data" method="post">
+                <form action="/saveSal" method="post">
+                    {{csrf_field()}}
                     <div class="form-group">
-                        <input type="text" class="form-control" name="eid" placeholder="Enter Employee ID">
+                        <input type="text" required minlength="5" class="form-control" name="eid" placeholder="Enter Employee ID">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="f_name" placeholder="Enter Employee First Name">
+                        <input type="text" class="form-control" name="full_name" placeholder="Enter Employee Full Name">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="l_name" placeholder="Enter Employee Last Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="email" placeholder="Enter Employee Email">
+                        <input type="email" required class="form-control" name="email" placeholder="Enter Employee Email">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="div" placeholder="Enter Employee Division">
@@ -54,17 +52,21 @@
                         <input type="text" class="form-control" name="designation" placeholder="Enter Employee Designation">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="b_salary" placeholder="Enter Employee Basic Salary">
+                        <input type="text" class="form-control prc" name="b_salary" placeholder="Enter Employee Basic Salary">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="increments" placeholder="Enter Increments of the Month">
+                        <input type="text" class="form-control prc" name="increments" placeholder="Enter Increments of the Month">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="decrements" placeholder="Enter Decrements of the Month">
+                        <input type="text" class="form-control prc" name="decrements" placeholder="Enter Decrements of the Month">
                     </div>
-                    </br>
-                    <input type="button" class="button" value="VIEW PAY SLIP">
+                    <div class="form-group">
+                        <input type="text" class="form-control prc" name="net_salary" placeholder="Net Salary of the Month">
+                    </div>
+                    <input type="submit" class="button" value="SUBMIT">
+                    <input type="reset" class="button" value="RESET">
                 </form>
+
             </div>
         </div>
     </div>
